@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myanmar Crisis Intelligence</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <div class="glass-card">
+            <header>
+                
+                <h1>Crisis or Non-Crisis</h1>
+                <p>Upload article threat analysis.</p>
+            </header>
+
+            <div class="upload-zone" id="dropZone">
+                <div class="icon-container">📂</div>
+                <h3>Click or Drag file here</h3>
+                <p class="small-text">Supports .txt, .pdf, .csv</p>
+                <input type="file" id="fileInput" hidden>
+            </div>
+
+            <button id="analyzeBtn" class="primary-btn" onclick="startAnalysis()" disabled>
+                Upload a File First
+            </button>
+
+            <div id="loader" class="loader hidden"></div>
+            
+            <div id="resultCard" class="result-card hidden">
+                <div id="statusIcon" class="status-icon"></div>
+                <div class="result-text">
+                    <h2 id="mainLabel">--</h2>
+                    <p id="confLabel">Confidence: --</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-panel">
+            <h3>Recent Scans</h3>
+            <ul id="historyList">
+                <li class="empty-state">No scans yet...</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="mkjs.js"></script>
+</body>
+</html>
